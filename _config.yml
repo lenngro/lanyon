@@ -2,21 +2,21 @@
 title:               Lennart Grosser
 tagline:             'Blog'
 description:         ''
-url:                 
+url:
 baseurl:             ''
 paginate:            5
 permalink:           pretty
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Lennart Grosser
+  url:
+  email:             lennart.grosser@web.de
 
 # Gems
 plugins:
   - jekyll-paginate
 
 # Custom vars
-version:             1.1.0
+version:             0.1
 google_analytics_id: #UA-XXXX-Y
