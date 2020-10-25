@@ -42,17 +42,23 @@
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
+      this.field('date');
       this.field('category');
-      this.field('content');
+      this.field('description');
+      this.field('tags');
 
       for (key in window.store) { // Add the data to lunr
-        this.add({
+        var post = {
           'id': key,
           'title': window.store[key].title,
           'author': window.store[key].author,
+          'date': window.store[key].date,
           'category': window.store[key].category,
-          'content': window.store[key].content
-        });
+          'description': window.store[key].description,
+          'tags': window.store[key].tags
+        }
+        console.log(post)
+        this.add(post);
       }
     });
     var results = idx.search(searchTerm); // Get lunr to perform a search
