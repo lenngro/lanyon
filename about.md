@@ -7,7 +7,7 @@ title: About
   Hey there! Welcome to my blog.
 </p>
 
-My name is Lennart Grosser, I'm a Machine Learning Engineer. Since May 2019, I'm employed at [Tiplu GmbH](https://tiplu.de/) where I'm working on automatic patient case encoding using NLP and deep learning.
+My name is Lennart Grosser, I'm a Machine Learning Engineer from Berlin, Germany. Since May 2019, I'm employed at [Tiplu GmbH](https://tiplu.de/) where I'm working on automatic patient case encoding using NLP and deep learning.
 
 ### More Information
 #### Previous work experience (excerpt):
