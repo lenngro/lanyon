@@ -55,9 +55,8 @@
           'date': window.store[key].date,
           'category': window.store[key].category,
           'description': window.store[key].description,
-          'tags': window.store[key].tags
+          'tags': window.store[key].tags.join(" ")
         }
-        console.log(post)
         this.add(post);
       }
     });

@@ -48,11 +48,48 @@ Multi-head attention is a way to project the queries, keys and values into highe
 #### Connecting Encoder to Decoder through Attention
 In an encoder-decoder block, the queries $$q$$ come from the previous decoder while the keys and values come from the encoder's output. By taking the keys and values from the encoder and not from the previous decoder, the decoders can also access the information in the input embeddings instead of only relying on the output embeddings. Within an encoder, queries, keys and values originate from the output from the previous encoder. This means an encoder can access all positions and representations from the previous encoder.
 ### Feed Forward Networks
-In both encoder and decoder blocks, a _position wise feed forward network_ (FNN) follows the multi-head attention. A FNN consists of two linear transformations that add another level of complexity to each block:
+In both encoder and decoder blocks, a _position-wise feed forward network_ (FNN) follows the multi-head attention. A FNN consists of two linear transformations that add another level of complexity to each block:
 
 $$FNN(x) = max(0, xW_1 + b_1)W_2 + b_2$$
 
 The FNN is called position-wise because the transformations (the weight matrices) are the same across all positions (however different in different layers). $$max(0, a)$$ is a [ReLU activation](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). The paper describes this layer as equivalent to a two convolutions with kernel size 1.
+### Positional Encoding
+Although the transformer architecture works without sequentially processing the input, the information that is given by the sequence itself ("_a_ happened **after** _b_") should still be taken advantage of. The transformer achieves this by adding a _positional encoding_ to the input. The positional encoding is a vector containing values that should provide information about the relative or absolute position of a part of the input. The architecture uses the following functions to compute the encodings:
+
+$$PE(pos, 2i) = sin(pos(10000^{i / d_{model}}))$$
+
+$$PE(pos, 2i+1) = cos(pos(10000^{i / d_{model}}))$$
+
+The authors explain this particular choice of positional encoding functions because for any fixed offset $$k$$, the position $$PE_{pos, 2i + 1}$$ can be represented as a linear function of $$PE_{pos}$$ which makes it easy for the model to learn this relationship. The functions allow for longer sequence lengths than seen during training.
+
+## More On Self-Attention
+The paper gives more insight on why the authors chose to use an architecture solely relying on self-attention over previous recurrent or convolutional layers. They define three criteria to compare the methods:
+1. total computational complexity per layer
+2. amount of computation that can be parallelized / min. number of sequential operations required
+3. path length between long-range dependencies in the network
+
+The third point is relevant for two reasons: 1. learning long-range dependencies between different parts of the input is crucial for effective sequence transduction problems and 2. the length of the path a forward (and backward) signal has to traverse is linked to the level of difficulty the model has to overcome to learn such a dependency (longer paths are harder to learn).
+
+The comparison of the different approaches are given below:
+
+![comparison](/assets/images/2020-11-07-Attention-Is-All-You-Need/comparison.png)
+
+From the table several things can be seen:
+* self-attention layers are faster than recurrent layers when the sequence length is smaller than the representation dimensionality $$d$$
+* by considering only the $$r$$ surrounding words of a given position, the computational performance could be further improved (maximum path length would then be $$O(n/r)$$).
+* convolutional layers are generally even more expensive than recurrent layers
+
+Another advantage of self-attention layers is increased interpretability.
+
+## Remaining Sections
+The remaining three sections of the paper describe training set-up, results and the conclusion and are left out here because they mostly don't give much more insight on the internals of the model's architecture. However, the reader is advised to have a look in the [original paper](https://arxiv.org/abs/1706.03762).
+
+However, some fairly interesting visualizations are given in the appendix that visualize how different heads in the multi-head attention learn different tasks. One of those is shown below:
+
+![multi-head-attention](/assets/images/2020-11-07-Attention-Is-All-You-Need/multi-head-attention.png)
+
+The picture shows two different attention heads. Obviously both heads learned to solve different tasks: 1. the left attention head (red) learned short-range relationships between parts of the input (which word relates to which other words in its close preceeding words),  2. the right attention head (green) visualizes more distant relationships (starting from more or less one word in each subsentence).
+
 
 [1]: https://www.bioinf.jku.at/publications/older/2604.pdf
 [2]: https://arxiv.org/abs/1412.3555
