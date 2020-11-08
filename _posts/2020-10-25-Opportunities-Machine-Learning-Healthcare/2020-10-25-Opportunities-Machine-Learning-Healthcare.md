@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Opportunities in Machine Learning for Healthcare"
+title: "Summary: Opportunities in Machine Learning for Healthcare"
 author: Lennart Grosser
 date: 2020-10-25
 category: "paper-summary"
@@ -65,7 +65,7 @@ For most existing work, machine learning models were trained on the largest data
 2. External Validity (shift over sources): There is no reason to believe _a priori_ that a machine learning model learned from one hospital will generalize to a new one. Even within one hospital transitions from one medical record system to another one or different patient populations can create non-obvious feature mapping problems.
 
 ### Interpretability
-Models that are deployed should be able to explain their predictions. Clinical staff cannot be expected to understand both clinical, legal and technical issues that come with a black box machine learning model.
+Models that are deployed should be able to explain their predictions. Clinical staff cannot be expected to understand clinical, legal and technical issues that come with a black box machine learning model.
 Further, future research should strive towards justification instead of interpretability, i.e. a model should be able to defend a particular prediction path. Justification would increase the transparency of the model and its decision process while relieving clinical staff from defending technical behavior they might not understand.
 
 [1]: https://jamanetwork.com/journals/jama/fullarticle/2588763

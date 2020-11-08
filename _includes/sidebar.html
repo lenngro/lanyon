@@ -25,7 +25,9 @@
       {% endif %}
     {% endfor %}
 
-    <!-- Lennart: uncommented, may be resued later -->
+    <a class="sidebar-nav-item{% if page.title == 'Meta' %} active{% endif %}" href="{{ '/meta' | absolute_url }}">Meta</a>
+
+    <!-- Lennart: uncommented, may be resumed later -->
     <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
     <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
     <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
