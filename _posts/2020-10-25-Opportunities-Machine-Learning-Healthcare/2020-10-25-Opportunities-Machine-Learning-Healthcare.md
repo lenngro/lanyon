@@ -4,7 +4,7 @@ title: "Summary: Opportunities in Machine Learning for Healthcare"
 author: Lennart Grosser
 date: 2020-10-25
 category: "paper-summary"
-description: "A summary of the paper 'Opportunities in Machine Learning for Healthcare' by Ghassemi et al."
+description: "A summary of the paper Opportunities in Machine Learning for Healthcare, Ghassemi et al., 2018. The paper paper describes the need for machine learning applications in healthcare, gives an overview of clinical data types as well as technical challenges. Further, it describes present and novel clinical opportunities for machine learning applications in healthcare settings. Some sections are left out."
 tags: ["machine learning", "healthcare", "clinical data"]
 ---
 

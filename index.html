@@ -11,10 +11,11 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-
     <span class="post-date">{{ post.date | date_to_string }}</span>
     {{ post.description }}
-    {{ post.content  | slice: 0, 400}}...
+    <!-- {{ post.content  | slice: 0, 400}}... -->
+    <h3>Tags</h3>
+    <span>{{ post.tags | join: ", "}}</span>
   </div>
   {% endfor %}
 </div>

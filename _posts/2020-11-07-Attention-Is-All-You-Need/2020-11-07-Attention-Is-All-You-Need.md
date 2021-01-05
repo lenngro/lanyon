@@ -4,12 +4,11 @@ title: "Summary: Attention Is All You Need"
 author: Lennart Grosser
 date: 2020-11-07
 category: "paper-summary"
-description: "A summary of the paper 'Attention Is All You Need' by Vaswani et al."
+description: "A summary of the paper Attention Is All You Need, Vaswani et al., 2017. The paper describes a novel sequence transduction model, the transformer, an encoder-decoder model that works only through attention mechanisms. Parts of the original paper may be left out."
 tags: ["machine learning", "deep learning", "attention", "self attention", "self-attention", "transformer"]
 ---
 
 > This post is a summary of the paper [Attention Is All You Need, Vaswani et al., 2017](https://arxiv.org/abs/1706.03762). The paper describes a novel sequence transduction model, the transformer, an encoder-decoder model that works only through attention mechanisms. Parts of the original paper may be left out.
-
 
 ## Introduction: History of approaches to sequence modeling and transduction problems
 In the introduction the authors give a brief overview of previous approaches to sequence modeling and transduction problems, i.e. recurrent neural networks such as [long short-term memory][1] or [gated recurrent units][2]. They describe the **fundamental problem** that those model architectures inhibit, that is the **constraint of sequential computation**. Recurrent neural networks factor computation along the symbol positions of the input and output sequences, yielding a sequence of hidden states $$h_{t}$$ for the $$t$$th sequence step, as a function of the previous hidden state $$h_{t-1}$$ and the input $$x_{t}$$ for the position $$t$$. This dependency on sequential inputs and computation inherently prevents  parallelization. Although different tricks exist that speed up the computation, the underlying problem can't be solved.
@@ -93,3 +92,4 @@ The picture shows two different attention heads. Obviously both heads learned to
 
 [1]: https://www.bioinf.jku.at/publications/older/2604.pdf
 [2]: https://arxiv.org/abs/1412.3555
+

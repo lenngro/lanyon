@@ -47,3 +47,7 @@
    align-items: stretch;
  }
 }
+
+.tags div {
+  margin-top: 10%;
+}

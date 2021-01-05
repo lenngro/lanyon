@@ -2,7 +2,7 @@
 title:               Lennart Grosser
 tagline:             'Blog'
 description:         ''
-url:
+url:                 "https://lenngro.github.io"
 baseurl:             ''
 paginate:            5
 permalink:           pretty
@@ -16,6 +16,9 @@ author:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
+
+whitelist:
   - jekyll-sitemap
   
 # Custom vars
