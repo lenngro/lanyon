@@ -13,7 +13,7 @@ tags: ["machine learning", "healthcare", "clinical data"]
 ## Why Machine Learning for Healthcare matters
 The usage of data to address health problems is crucial: humans collect information about the patient and his condition to determine an appropriate treatment which directly yields the need for complete documentation and precise information extraction.
 
-Modern elctronic health records provide more and more data to support clinical staff and allow for more insight about a patient's condition.
+Modern electronic health records provide more and more data to support clinical staff and allow for more insight about a patient's condition.
 
 Recent machine learning research has shown to be an effective way to leverage the potential of collected patient documentation to create meaningful applications that help both doctors and patients:
 * [Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs, Gulshan et al. 2016][1]
@@ -37,7 +37,7 @@ The authors name three technical challenges that should be considered when worki
 
 1. Understanding Causality: A fundamental problem in healthcare is to answer causality questions, e.g. _what happens if a doctor administers a treatment?_. Answering such questions can be challenging as the available data is collected observationally and may have been influenced by unknown factors. A short example to visualize the underlying problem: researchers found that asthmatic patients who were admitted to the hospital for pneumonia were more aggressively treated for the infection, thus lowering the subpopulation mortality rate. A learning algorithm may now find that asthma is protective, as it leads to more intense care, which is obviously wrong and may to catastrophic outcomes if such a model would be released and determine the level of care a patient needs. The additional information about how intense the care of a patient was, would have been an important to such a model as it would enable the model to understand the severity of a disease.
 2. Missing data: samples missing features are a common problem in machine learning. Three different classifications of missing data are popular: a) missing completely at random (MCAR), b) missing at random (MAR) and c) missing not at random (MNAR). The first (MCAR) describes a fixed probability of a feature missing. In this case, samples that do miss the feature are dropped, so that unbiased learning is possible (complete case analysis). MAR describes the probability of missingness as random conditional on the observed variables, e.g. nurses are less likely to measure lactate levels in patients with traumatic injury while traumatic injuries are documented. If nurses are less likely to measure lactate levels in patients who they believe have low levels, then the lactate measures are MNAR (the measurement of the signal is meaningful). Summarized: information may be conveyed by the absence of a measurement that should not be ignored.
-3. Outcomes should be defined carefully: Multiple data sources should be combined to create reliable labels for  a machine learning model. A single data source may be incomplete and yield incorrected outcomes (the EHR indicates a patient had pneumonia but that could also mean he was only _screened_ for pneumonia). Further, a careful comprehension of available labels is necessary: a model should not predict the behaviour it has seen in the training data if the training data itself contains mistakes (the model should not aim to predict the behavior of a doctor that is wrong).
+3. Outcomes should be defined carefully: Multiple data sources should be combined to create reliable labels for  a machine learning model. A single data source may be incomplete and yield incorrect outcomes (the EHR indicates a patient had pneumonia but that could also mean he was only _screened_ for pneumonia). Further, a careful comprehension of available labels is necessary: a model should not predict the behavior it has seen in the training data if the training data itself contains mistakes (the model should not aim to predict the behavior of a doctor that is wrong).
 
 ## Machine Learning in Healthcare Opportunities
 
@@ -49,7 +49,7 @@ Many tasks performed by clinicians are well-defined and require a small amount o
 2. Automating routine processes: Routine tasks that need to be done for every patient and that are time-consuming, e.g. summarizing a patient's treatment that could be accelerated using NLP methods.
 
 ### Clinical Support and Augmentation
-1. Standardizing clinical processes: To cope for different amounts of clinical training and experience, treatment choices could be supported by ML predictions, e.g. when a clinician is unsure about which medication sets or doeses are most appropriate for a patient, a machine learning model could recommend sets or dosages based on the past condition and treatment while suggesting default dosages to avoid dangerous dosing.
+1. Standardizing clinical processes: To cope for different amounts of clinical training and experience, treatment choices could be supported by ML predictions, e.g. when a clinician is unsure about which medication sets or doses are most appropriate for a patient, a machine learning model could recommend sets or dosages based on the past condition and treatment while suggesting default dosages to avoid dangerous dosing.
 2. Integrating fragmented records: a long patient history may lead to many fragmented pieces of information about the patient that would be required to be scanned manually by a clinician to find useful indications. Automatic review and summary of the patient history could speed up this process.
 
 ### Expanding Clinical Capacities
@@ -61,7 +61,7 @@ The authors further describe future opportunities for machine learning research 
 
 ### Data
 For most existing work, machine learning models were trained on the largest data set possible and assumed to fit for deployment. This assumption may not hold for clinical settings for two reasons:
-1. Internal validity (shift ofer time): The practices, standard processes or medical definitions in a hospital may change over time. Noisy data containing deprecated information can be a source of error when fed into a machine learning model.
+1. Internal validity (shift over time): The practices, standard processes or medical definitions in a hospital may change over time. Noisy data containing deprecated information can be a source of error when fed into a machine learning model.
 2. External Validity (shift over sources): There is no reason to believe _a priori_ that a machine learning model learned from one hospital will generalize to a new one. Even within one hospital transitions from one medical record system to another one or different patient populations can create non-obvious feature mapping problems.
 
 ### Interpretability

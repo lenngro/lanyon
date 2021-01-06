@@ -2,7 +2,7 @@
 title:               Lennart Grosser
 tagline:             'Blog'
 description:         ''
-url:                 "https://lenngro.github.io"
+url:                 
 baseurl:             ''
 paginate:            5
 permalink:           pretty
