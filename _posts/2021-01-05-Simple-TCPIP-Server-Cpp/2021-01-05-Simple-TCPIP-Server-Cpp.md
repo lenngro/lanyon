@@ -150,6 +150,8 @@ As previously mentioned, the Internet Protocol uses a IP header to depict the ne
 ## Simple Usage (C++)
 Find a simple implementation of a client-server setting that uses TCP/IP under the hood below. The code will create a simple TCP/IP connection between a server and a client. The client can send messages to the server whose going to display and return the message once received.
 
+The full script can be found at the bottom of the page.
+
 This code follows the great tutorial by [Sloan Kelly](https://www.youtube.com/watch?v=cNdlrbZSkyQ).
 
 ### Create A Socket
