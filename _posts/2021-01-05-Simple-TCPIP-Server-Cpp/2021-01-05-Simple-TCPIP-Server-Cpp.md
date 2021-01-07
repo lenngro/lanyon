@@ -385,7 +385,7 @@ int main()
 
 
 ## Sources and further resources
-1. [A nice review of the most important terms in TCP](https://www.cs.miami.edu/home/burt/learning/Csc524.032/notes/tcp_nutshell.html)
+1. [A nice summary of the most important terms in TCP](https://www.cs.miami.edu/home/burt/learning/Csc524.032/notes/tcp_nutshell.html)
 2. [A great post describing package exchange in detail by monitoring a TCP connection in Wireshark](https://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/)
 3. [A concise description of the IP datagram](http://mars.netanya.ac.il/~unesco/cdrom/booklet/HTML/NETWORKING/node020.html)
 4. [An explanation of IP  addresses, subnet masks and network classes](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting)
